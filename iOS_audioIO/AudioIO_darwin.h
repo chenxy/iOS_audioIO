@@ -15,7 +15,6 @@ typedef enum {
     BEEP,
     INCOMMING_CALL,
     CALLING,
-    
 } SoundEffectType;
 
 @interface AudioIO : NSObject <AVAudioPlayerDelegate>

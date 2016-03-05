@@ -10,12 +10,13 @@
 #import "AudioIO_darwin.h"
 
 @interface ViewController () <AVAudioPlayerDelegate> {
-    
-    
+  
 }
 
 @property(nonatomic, retain) AudioIO *audioIO;
+
 @property(nonatomic, retain) NSMutableArray *playersHolder;
+
 @end
 
 @implementation ViewController
@@ -26,7 +27,9 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     _audioIO = [[AudioIO alloc] init];
+
     _playersHolder = [[NSMutableArray alloc] init];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -35,6 +38,7 @@
 }
 
 -(IBAction) beep:(id)sender {
+
     NSString *file = [[NSBundle mainBundle] pathForResource:@"ringtone" ofType:@"mp3"];
     [_audioIO playEffect:file withType:BEEP];
 }
@@ -161,9 +165,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionInterruptionNotification object:session];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionMediaServicesWereResetNotification object:session];
 }
-
-
-
 
 
 @end
